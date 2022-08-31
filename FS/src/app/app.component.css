@@ -1,0 +1,94 @@
+main {
+    width: auto;
+    height: 100vh;
+    font-family: Consolas, monaco, monospace;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    background-image: linear-gradient(lightblue, white 25%);
+  }
+  
+  h3 {
+    margin-top: 5vh;
+  }
+  
+  table {
+    width: 90vw;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 9px gray;
+    margin-bottom: 10px;
+  }
+  
+  th {
+    background-image: linear-gradient(rgb(195, 255, 245), rgb(134, 170, 182));
+  }
+  
+  th,
+  td {
+    border: 1px solid grey;
+    padding: 5px;
+  }
+  
+  /* th, */
+  td:hover {
+    background-image: linear-gradient(white 10%, rgb(190, 255, 189));
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: rgb(233, 233, 233);
+  }
+  
+  table tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  #noItems {
+    background-image: linear-gradient(white, lightblue);
+    padding: 10px;
+    padding-inline: 40px;
+    box-shadow: 0 0 5px gray;
+  }
+  
+  button {
+    font-weight: 700;
+    color: black;
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: inset;
+    transition: 0, 3s;
+    border: 3px rgb(139, 139, 139) outset;
+  }
+  
+  #btnSearch,
+  #btnClear,
+  #btnFilter {
+    padding: 2px;
+    border: 2px rgb(139, 139, 139) outset;
+  }
+  
+  #btnLoad:hover {
+    background-image: linear-gradient(white, rgb(190, 255, 189));
+  }
+  
+  #btnReset:hover {
+    background-image: linear-gradient(white, rgb(255, 214, 79));
+  }
+  
+  button:hover {
+    color: rgb(109, 0, 0);
+    background-color: rgb(190, 255, 189);
+    border: 3px rgb(139, 139, 139) outset;
+    scale: 1.1;
+    box-shadow: 0 0 3px rgb(126, 126, 126);
+  }
+  
+  button:active {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    scale: 1.2;
+  }

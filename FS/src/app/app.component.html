@@ -1,0 +1,62 @@
+<main class="main">
+  <h3>Friendly Solutions - code task (task78)</h3>
+  <p>{{ angularVersion }} <br />Tomasz Janiszta</p>
+
+  <span>
+    <button id="btnLoad" *ngIf="filteredOrders.length < 1 && !searchPhrasesFilter" (click)="loadOrdersData()">
+      Load data
+    </button>
+    <button id="btnReset" *ngIf="filteredOrders.length > 0 || searchPhrasesFilter" (click)="reset()">
+      Reset
+    </button>
+  </span>
+  <br />
+  <label *ngIf="filteredOrders.length > 0">
+  Priority:
+    <select id="select" (change)="filterPriority($event)">
+      <option *ngFor="let opt of priority" [value]="opt"
+        [attr.selected]="opt === selectedOption ? true : null">
+        {{ opt }}
+      </option>
+    </select>
+  </label>
+  <br />
+  <label *ngIf="filteredOrders.length > 0 && !searchPhrasesFilter">
+     Search by description:
+    <input
+      [(ngModel)]="searchPhrase"
+      id="searchInput"
+      type="text"
+      placeholder="Enter searched phrase"
+    /><button id="btnSearch" type="button" (click)="ordersFilter(searchPhrase)">Search</button>
+  </label>
+
+  <span *ngIf="searchPhrasesFilter">
+    Orders filtered by description containing: {{searchPhrasesFilter}} 
+    <button id="btnClear" type="button" (click)="ordersClearFilter()">
+      Clear filter
+    </button>
+  </span>
+
+  <br/>
+
+  <div *ngIf="filteredOrders.length < 1 && !searchPhrasesFilter" id="noItems">
+    No items. Press "Load data"
+  </div>
+
+  <div *ngIf="filteredOrders.length > 0">
+    <table id="table">
+      <tr>
+        <th *ngFor="let column of headers">
+          {{ column }}
+        </th>
+      </tr>
+      <tr *ngFor="let row of filteredOrders; let idx = index">
+        <td *ngFor="let column of headers">
+          {{ row[column] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</main>
