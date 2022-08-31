@@ -3,7 +3,7 @@ FS_project_solution (task 78)
 
 (Test_server only for imitation of retrieving data from a remote resource)
 
-## Clone/copy Test_server and FS_project
+## Clone/download Test_server and FS folders
 
 ## Runing the server in folder "Test_server"
 
